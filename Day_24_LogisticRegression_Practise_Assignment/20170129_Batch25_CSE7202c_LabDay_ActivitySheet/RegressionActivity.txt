@@ -1,0 +1,23 @@
+Learning Outcomes:
+ Quick recap of the linear regression model and its assumptions
+ Building linear regression models and interpret its output
+ A recap of logistic regression, interpretation and ROC curves to arrive at the best probability threshold
+
+_______________________________________________________________________________
+1. Linear Regression
+	a) Read the Housing data.
+	b) Visualize the relationship between the median value of house with various attributes
+	c) Split the data into train and test sets
+	d) Apply simple and multiple linear regression
+	e) Observe the summary, and residuals and compare them with the assumptions
+	f) Observe the evaluation metrics
+	g) Apply VIF or other techniques to improve the 
+	
+2. Logistic Regression
+	a) Read the German Credit Ratings dataset
+	b) Apply necessary preprocessing steps
+	c) Split the data into train and test sets
+	d) Apply logistic regression and observe the output
+	e) Apply dimension reduction techniques and rebuild the model
+	f) Study the error metrics before and after
+	g) Apply ROC curve to arrive at the best probability threshold value for classification

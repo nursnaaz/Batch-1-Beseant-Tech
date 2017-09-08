@@ -1,0 +1,58 @@
+Activity – Logistic Regression
+Learning outcomes: Logistic Regression
+After completing this exercise, you should be able to understand and perform below tasks.
+	1. Building classification mo del using logistic regression technique
+	2. Validating the model results
+	3. Handling multicollinearity and dimensionality reduction
+	4. Evaluation of error metrics
+	5. Applying the models on un-seen data
+	a. Splitting data into train and test data sets
+	b. Comparing the error metrics
+	6. Interpretation of the results
+
+Problem Statement:
+
+A large child education toy company which sells edutainment tablets and gaming systems
+both online and in retail stores wanted to analyze the customer data. They are operating
+from last few years and maintaining all transactional information data. The given data
+‘CustomerData.csv’ is a sample of customer level data extracted and processed for the
+analysis from various set of transactional files.
+The objectives of today’s activity are
+Building a regression model to predict the customer revenue based on other factors
+and understand the influence of other attributes on revenue
+Building a classification model to predict whether the given customer will churn or
+not churn based on other known factors
+
+Logistic Regression Model:
+			1. Read the data sets ‘CustomerData_Classification.csv’ into R.
+			2. Understand the structure of the data and pre-process
+			a. Drop the attribute ‘CustomerID’
+			b. Convert ‘City’ as factor variable
+			3. Target attribute is : 
+				Churned data$Churned <- as.factor(as.character(data$Churned))
+			4. Split the data into train and test data
+				sets rows=seq(1,nrow(data),1)
+				set.seed(123)
+				trainRows=sample(rows,(70*nrow(data))/100)
+				train = data[trainRows,]
+				test = data[-trainRows,]
+			5. Build logistic regression and interpret the results
+				LogReg <- glm(Churned ~ ., data=train, family=binomial) 
+				summary(LogReg)
+				prob<-predict(LogReg, type="response")
+				pred_class <- factor(ifelse(prob> 0.5, 1,0)) 
+				table(train$Churned,pred_class)
+			6. Evaluation on train & test data
+				# Build Logistic regression and interpret the results
+				LogReg <- glm(Churned ~ ., data=train, family=binomial) 
+				summary(LogReg)
+				# train results
+				prob<-predict(LogReg, type="response")
+				pred_class <- ifelse(prob> 0.5, 1, 0)
+				table(train$Churned,pred_class)
+				# Test results
+				fitted.results <- predict(LogReg,test,type='response')
+				fitted.class <- ifelse(fitted.results > 0.5,1,0)
+				table(test$Churned,fitted.class)
+			7. Evaluation of error metrics
+			Precision, Recall and Accuracy
