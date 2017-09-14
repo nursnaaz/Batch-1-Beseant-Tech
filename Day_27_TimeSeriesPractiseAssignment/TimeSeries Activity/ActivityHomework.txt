@@ -1,0 +1,17 @@
+Learning outcomes: After completing this exercise, you should be able to understand and perform below tasks.
+Time Series:
+1. Understanding time series data and aggregating the data based on intervals
+2. Decomposing the time series and analyzing the components
+3. Adjusting for stationarity, trend and seasonality in the data
+4. Applying moving averages methods, Holt-Winters, ARIMA and Auto-ARIMA models for forecasting
+_____________________________________________________________________________________
+Steps:
+a) Read the HDFC data
+b) Consider the Close Price as Stock Price and aggregate the data at month level
+c) Create a time series object and plot it
+d) Decompose the time series and plot the components
+e) Use averaging models for smoothing the data
+f) Apply Holt-Wonter’s model for forecasting for future periods
+g) Study ACF, PACF plots to find auto and partial auto correlations
+h) Apply ARIMA models
+i) Applying Auto-ARIMA model and make forecast
